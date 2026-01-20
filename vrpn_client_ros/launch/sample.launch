@@ -24,6 +24,7 @@
     <!-- 这里启动时注意加入刚体的名称 rigid_body -->
     <!-- 同时注意先启动 mavros px4.launch -->
     <!-- 示例：roslaunch vrpn_client_ros sample.launch rigid_body:=uav01 -->
+    <!-- <remap from="/vrpn_client_node/$(arg rigid_body)/pose" to="/mavros/vision_pose/pose"/> -->
     <remap from="/vrpn_client_node/uav01/pose" to="/mavros/vision_pose/pose"/>
 
   </node>
