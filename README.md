@@ -5,7 +5,7 @@
   - 飞控使用的是 PX4 6C mini
   - 电调可以使用四合一电调节省空间
   - 注意接收机和遥控器对应，尽量使用统一厂家的，不然可能连不上(乐迪或者天地飞)
-    ![组装好的无人机](/src/images/uav.jpeg "组装好的无人机")
+    ![组装好的无人机](images/uav.jpeg "组装好的无人机")
 
 - 其余参考硬件组装
   1.  [香港科技大学空中机器人实验室](https://github.com/HKUST-Aerial-Robotics/UniQuad)
@@ -53,8 +53,8 @@
     - [根据自己 ubuntu 版本安装对应的 QGC 版本](https://github.com/mavlink/qgroundcontrol/releases)（注意 ubuntu 20.04 最高支持 QGC v4.4.4 版本）
     - 在同一个局域网下不需要机载电脑安装 QGC，因为机载电脑如果是 arm 架构安装 QGC 十分不方便，可以通过 MAVROS 经过 WIFI 连接 PX4，[参考帖子](https://blog.csdn.net/sinat_16643223/article/details/136336316)
       - 打开 MAVROS launch 文件：`sudo gedit /opt/ros/${ROS_DISTRO}/share/mavros/launch/px4.launch`
-      - 修改 `gcs_url` 对应行，填入笔记本电脑 ip，比如 `udp://:14509@笔记本ip:14579` ![如图所示](/src/images/gcs.png)
-      - QGC 连接时选择 UDP ，填入对应端口号 `14579` ![如图所示](/src/images/gcs1.png)
+      - 修改 `gcs_url` 对应行，填入笔记本电脑 ip，比如 `udp://:14509@笔记本ip:14579` ![如图所示](images/gcs.png)
+      - QGC 连接时选择 UDP ，填入对应端口号 `14579` ![如图所示](images/gcs1.png)
       - 也可将 `gcs_url` 改为 `udp-b://@`，这样 QGC 会自动连接飞控，但是 PX4 可能会报延迟的错误，不推荐
   - PX4 与机载电脑连接：
     - 将上述 `launch` 文件中的 `fcu_url` 改为 `/dev/ttyACM0:57600`(其中，`ttyACM*`标识一般是飞控的原生USB口，而`ttyUSB*`一般是TELEM1/2或者Debug端口，需转接线。后面的`57600`表示波特率)，注意启动 launch 文件时一般需要赋予权限 `sudo chmod 777 /dev/ttyACM01`
@@ -106,7 +106,7 @@
         ```
         rosrun offboard offboard_circle
         ````
-    - 芜湖起飞！！！ ![起飞](/src/images/GIF_20260120_180312.gif)
+    - 芜湖起飞！！！ ![起飞](images/fly.gif)
 
 # TODO 
 1. 加入 Realsense D435i 相机利用 Vins-Mono 实现定位
