@@ -135,6 +135,7 @@ ${catkin_INCLUDE_DIRS}
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(${PROJECT_NAME}_node src/offboard_node.cpp)
 add_executable(${PROJECT_NAME}_circle src/offboard_circle.cpp)
+add_executable(attitude_offboard_node src/attitude_offboard_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -152,6 +153,10 @@ target_link_libraries(${PROJECT_NAME}_node
 )
 
 target_link_libraries(${PROJECT_NAME}_circle
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(attitude_offboard_node
   ${catkin_LIBRARIES}
 )
 
